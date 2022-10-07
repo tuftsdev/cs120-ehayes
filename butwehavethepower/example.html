@@ -1,0 +1,23 @@
+<head>
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function () {  // don't run this until all DOM content is loaded
+      var track = document.getElementById("track1");
+      track.addEventListener("cuechange", function () {
+        var myTrack = this.track;             // track element is "this"
+        var myCues = myTrack.activeCues;      // activeCues is an array of current cues.
+        if (myCues.length > 0) {
+          var disp = document.getElementById("display");
+          disp.replaceChild((myCues[0].getCueAsHTML()), disp.firstChild);
+        }
+      }, false);
+    }, false);
+    </script>
+  </head>
+  <body>
+    <video id="video1" controls>
+      <source src="https://www.cs.tufts.edu/comp/120/butwehavethepower.mp4" id="butwehavethepower"  >
+      <track id='track1' label='English captions' src="entrack.vtt" kind='subtitles' srclang='en' default >
+    </video>
+    <div id="display">
+      
+    </div>
