@@ -1,12 +1,3 @@
-class Vehicle {
-	constructor(id, lat, lng, map) {
-		this.id = id;
-		const pos = {lat: lat, lng: lng};
-		this.marker = new google.maps.Marker({pos, map: map, optimized: false});
-		console.log();
-	}
-}
-
 function initMap() {
 	const center = new google.maps.LatLng(42.352271, -71.0552400000001);
     const map = new google.maps.Map(document.getElementById("map"), {
@@ -48,7 +39,6 @@ function setVehicles(map) {
 			map,
 			icon: image,
 			shape: shape,
-			title: vehicles[0],
 		});
 	}
 }
