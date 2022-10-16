@@ -21,14 +21,8 @@ function setVehicles(map) {
 	const image = {
 		url: "car.png",
 		size: new google.maps.Size(30, 70),
-		origin: new google.maps.Point(0, 0),
-		anchor: new google.maps.Point(0, 32)
 	};
 
-	const shape = {
-		coords: [0, 0, 0, 0, 30, 70, 30, 0],
-		type: "poly",
-	};
 
 	for (let i = 0; i < vehicles.length; ++i)
 	{
@@ -37,8 +31,7 @@ function setVehicles(map) {
 		new google.maps.Marker({
 			position: { lat: vehicles[i][1], lng: vehicles[i][2]},
 			map,
-			icon: image,
-			shape: shape,
+			icon: image
 		});
 	}
 }

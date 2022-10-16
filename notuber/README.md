@@ -2,4 +2,38 @@
 
 As far as I believe, everything (except for the Performance Optimization Requirements) has been implemented as outlined in the lab assignment.
 I did not collaborate with anyone for this lab. I spent approximately 2-3 hours completing this lab, and I learned a lot about Typescript second-hand from the Google Maps API documentation.
-I still need to include the impact of performance enhancements in this README, to be pushed to this repository at a later date.
+I use Lighthouse to test and verify performance and other metrics about the site. I implemented some performance enhancements that entailed adding two <meta> elements to the html, one for viewports for mobile devices and one to provide a description. 
+
+
+Here are some metrics gathered:
+
+### First Contentful Paint
+0.4 s
+
+### Time to Interactive
+0.5 s
+
+### Speed Index
+0.6 s
+
+### Total Blocking Time
+0 ms
+
+### Largest Contentful Paint
+0.9 s
+
+### Cumulative Layout Shift
+0
+
+After the optimizations were added, Lighthouse gave the site 
+the following scores:
+
+### Performance: 99
+
+### Accessibility: 100
+
+### Best Practices: 92*
+
+(One issue was found here pertaining to the Street View Pegman Control, which I was not directly using on the site.. so I am a bit confused as to why its causing a problem here.)
+
+### SEO: 100
