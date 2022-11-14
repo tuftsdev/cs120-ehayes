@@ -42,3 +42,8 @@ the following scores:
 
 As far as I believe, everything (except for the Performance Optimization Requirements) has been implemented as outlined in the lab assignment.
 I did not collaborate with anyone for this lab. I spent approximately 8 hours completing this lab, and I learned a lot more about how Javascript works, especially asynchronously. I also learned about how distances are computed and how to give markers infoWindow tabs that show useful information from user clicks.
+
+# Lab 12 The Ride-Hailing Service, part 3
+
+As far as I believe, this lab has been completed following all of the 'basic' requirements. I spent about 5 hours on this lab, most of it spent working on debugging the back-end on heroku. I had never worked on a back-end before, so I learned quite a lot in completing this assignment.
+I have completed #1, 3 and 4 of the 'going beyond' specifications in the lab, and have verified that they work using curl like so: `curl --data "username=ZlrthCQi" https://secret-fjord-19550.herokuapp.com/passenger.json -X GET`. 

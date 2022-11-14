@@ -1,10 +1,10 @@
 const PROXIMITY_RATIO_MILES_CONSTANT = 0.000621371192
 
 function initMap() {
-	const center = new google.maps.LatLng(40.7047, -73.9418);
+	const center = new google.maps.LatLng(42.3705224, -71.1109071);
     const map = new google.maps.Map(document.getElementById("map"), {
         center: center,
-        zoom: 2,
+        zoom: 12,
     });
 
     setActiveRiderLocation(map);
@@ -24,7 +24,7 @@ function setActiveRiderLocation(map) {
 function sendRideRequest(lat, lng, map) {
 	var http = new XMLHttpRequest();
 	var name = "ZlrthCQi";
-	var url = 'https://jordan-marsh.herokuapp.com/rides';
+	var url = 'https://secret-fjord-19550.herokuapp.com/rides';
 	var params = "username=" + name + "&lat=" + lat + "&lng=" + lng;
 	
 	http.open('POST', url, true);
@@ -102,7 +102,7 @@ function findcarNearestUser(map, user, carList, polyline) {
 		const c = { lat: entry.lat, lng: entry.lng };
 		if (entry.id == lowestDistanceIndex) {
 			polyline.setMap(null);
-			cardistance = "<p>The nearest car is " + lowestDistance * PROXIMITY_RATIO_MILES_CONSTANT + " miles away.</p>";
+			cardistance = "<p>The nearest car is " + (lowestDistance * PROXIMITY_RATIO_MILES_CONSTANT).toPrecision(3) + " miles away.</p>";
 			polyline = new google.maps.Polyline({path: [user.position, c], map: map})
 		}
 	});
@@ -112,7 +112,7 @@ function findcarNearestUser(map, user, carList, polyline) {
 
 function findDistanceFromUser(map, user, car) {
 	const d = google.maps.geometry.spherical.computeDistanceBetween(user.position, car.position);	
-	return "<p> This car is " + (d * PROXIMITY_RATIO_MILES_CONSTANT) + " miles away.";
+	return "<p> This car is " + (d * PROXIMITY_RATIO_MILES_CONSTANT).toPrecision(3) + " miles away.";
 }
 
 window.initMap = initMap;
